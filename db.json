@@ -1,0 +1,60 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "text": "Doctor's appointment",
+      "description": "Attend my appointment at Fairview Medical Centre",
+      "day": "May 5th at 2:30pm",
+      "reminder": false
+    },
+    {
+      "id": 2,
+      "text": "Meeting at school",
+      "description": "Meeting about the school curriculum",
+      "day": "May 6th at 1:30pm",
+      "reminder": true
+    },
+    {
+      "id": 3,
+      "text": "Test Title One",
+      "description": "Test Description, Test Description",
+      "day": "Test Date 9th May",
+      "reminder": false
+    },
+    {
+      "id": 4,
+      "text": "Test Title Two",
+      "description": "Test Description, Test Description",
+      "day": "Test Date 10th May",
+      "reminder": true
+    },
+    {
+      "id": 5,
+      "text": "Test Title Three",
+      "description": "Test Description, Test Description",
+      "day": "Test Date 11th May",
+      "reminder": false
+    },
+    {
+      "id": 6,
+      "text": "Test Title Four",
+      "description": "Test Description, Test Description",
+      "day": "Test Date 12th May",
+      "reminder": true
+    },
+    {
+      "text": "Test Title Five",
+      "day": "Test Date 13th May",
+      "description": "Test Description Test Description",
+      "reminder": false,
+      "id": 7
+    },
+    {
+      "text": "Test Title Six",
+      "day": "Test Date 14th May",
+      "description": "Test Description Test Description",
+      "reminder": true,
+      "id": 8
+    }
+  ]
+}
