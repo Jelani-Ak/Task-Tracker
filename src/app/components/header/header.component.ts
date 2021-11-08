@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(private uiService: UiService, private router: Router) {
     this.subscription = this.uiService
-      .onToggle()
+      .onToggleAddTask()
       .subscribe((value) => (this.showAddTask = value));
   }
 

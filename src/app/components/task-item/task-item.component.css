@@ -9,6 +9,12 @@
     border-left: 5px solid green;
 }
 
+/* .task.description {
+    background: #999999;
+    margin-bottom: 10px;
+    border-bottom: 5px solid red;
+} */
+
 .task h3 {
     display: flex;
     align-items: center;

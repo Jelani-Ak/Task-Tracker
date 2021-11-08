@@ -1,5 +1,5 @@
 {
-  "name": "angular-crash",
+  "name": "Task-Tracker",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
