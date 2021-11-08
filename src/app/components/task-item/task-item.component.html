@@ -1,19 +1,19 @@
 <div
   [ngClass]="{ reminder: task.reminder }"
   class="task"
-  (click)="toggleDescription()"
+  (click)="toggleDescription(task)"
   (dblclick)="toggleReminder(task)"
 >
   <h3>
     {{ task.text }}
     <fa-icon
-      (click)="onClickDelete(task)"
+      (click)="deleteTask(task)"
       [ngStyle]="{ color: 'red' }"
       [icon]="faTimes"
     >
     </fa-icon>
   </h3>
-  <p *ngIf="showDescription">
+  <p *ngIf="task.descriptionShow">
     {{ task.description }}
   </p>
   <p>{{ task.day }}</p>

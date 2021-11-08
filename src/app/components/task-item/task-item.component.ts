@@ -3,6 +3,7 @@ import { Task } from 'src/app/Task';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { UiService } from 'src/app/services/ui.service';
 import { Subscription } from 'rxjs';
+import { TaskService } from 'src/app/services/task.service';
 
 @Component({
   selector: 'app-task-item',
@@ -15,20 +16,20 @@ export class TaskItemComponent implements OnInit {
   @Output() onToggleReminder: EventEmitter<Task> = new EventEmitter();
   @Output() onToggleDescription: EventEmitter<Task> = new EventEmitter();
 
-  showDescription!: boolean;
+  descriptionShow!: boolean;
   subscription!: Subscription;
 
   faTimes = faTimes;
 
-  constructor(private uiService: UiService) {
+  constructor(private uiService: UiService, private taskService: TaskService) {
     this.subscription = this.uiService
       .onToggleDescription()
-      .subscribe((value) => (this.showDescription = value));
+      .subscribe((value) => (this.descriptionShow = value));
   }
 
   ngOnInit(): void {}
 
-  onClickDelete(task: Task) {
+  deleteTask(task: Task) {
     this.onDeleteTask.emit(task);
   }
 
@@ -36,7 +37,7 @@ export class TaskItemComponent implements OnInit {
     this.onToggleReminder.emit(task);
   }
 
-  toggleDescription() {
-    this.uiService.toggleDescription();
+  toggleDescription(task: Task) {
+    this.onToggleDescription.emit(task);
   }
 }
