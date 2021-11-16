@@ -1,9 +1,9 @@
 <div
   [ngClass]="{ reminder: task.reminder }"
   class="task"
-  (click)="toggleDescription(task)"
   (dblclick)="toggleReminder(task)"
 >
+  <!-- Task name -->
   <h3>
     {{ task.text }}
     <fa-icon
@@ -13,11 +13,31 @@
     >
     </fa-icon>
   </h3>
-  <p *ngIf="task.descriptionShow">
-    {{ task.description }}
-  </p>
+
+  <!-- Task Deadline -->
   <p>{{ task.day }}</p>
-  <div>
-    <p>Show Description</p>
+
+  <!-- Task Description -->
+  <div
+    [@open-close-description]="task.descriptionShow ? 'open' : 'closed'"
+    class="form-control form-control label description-content"
+  >
+    <h4>Description</h4>
+    <p>{{ task.description }}</p>
+  </div>
+
+  <div class="button-row">
+    <!-- Show Description Button -->
+    <app-button
+      color="{{ task.descriptionShow ? 'black' : 'green' }}"
+      text="{{ task.descriptionShow ? 'Hide' : 'Show more' }}"
+      (click)="toggleDescription(task)"
+    ></app-button>
+
+    <!-- Toggle Reminder (Unfinished) -->
+    <app-button
+      color="{{ task.descriptionShow ? 'black' : 'green' }}"
+      text="{{ task.descriptionShow ? 'Off' : 'On' }}"
+    ></app-button>
   </div>
 </div>

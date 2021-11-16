@@ -13,7 +13,7 @@
       "text": "Meeting at school",
       "description": "Meeting about the school curriculum",
       "day": "May 6th at 1:30pm",
-      "reminder": true,
+      "reminder": false,
       "descriptionShow": false
     },
     {
@@ -21,7 +21,7 @@
       "text": "Test Title One",
       "description": "Test Description, Test Description",
       "day": "Test Date 9th May",
-      "reminder": false,
+      "reminder": true,
       "descriptionShow": false
     },
     {
@@ -38,7 +38,7 @@
       "description": "Test Description, Test Description",
       "day": "Test Date 11th May",
       "reminder": false,
-      "descriptionShow": true
+      "descriptionShow": false
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "description": "Test Description, Test Description",
       "day": "Test Date 12th May",
       "reminder": true,
-      "descriptionShow": true
+      "descriptionShow": false
     },
     {
       "id": 7,
@@ -62,7 +62,15 @@
       "day": "Test Date 14th May",
       "description": "Test Description Test Description",
       "reminder": true,
-      "descriptionShow": true
+      "descriptionShow": false
+    },
+    {
+      "text": "Test Title Seven",
+      "day": "Test Date 15th May",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "reminder": false,
+      "descriptionShow": false,
+      "id": 9
     }
   ]
 }

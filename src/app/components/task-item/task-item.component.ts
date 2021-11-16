@@ -4,11 +4,36 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { UiService } from 'src/app/services/ui.service';
 import { Subscription } from 'rxjs';
 import { TaskService } from 'src/app/services/task.service';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-task-item',
   templateUrl: './task-item.component.html',
   styleUrls: ['./task-item.component.css'],
+  animations: [
+    trigger('open-close-description', [
+      state(
+        'open',
+        style({
+          height: '*',
+        })
+      ),
+      state(
+        'closed',
+        style({
+          height: '0px',
+        })
+      ),
+      transition('open => closed', [animate('250ms ease-in-out')]),
+      transition('closed => open', [animate('250ms ease-in-out')]),
+    ]),
+  ],
 })
 export class TaskItemComponent implements OnInit {
   @Input() task!: Task;
@@ -17,6 +42,7 @@ export class TaskItemComponent implements OnInit {
   @Output() onToggleDescription: EventEmitter<Task> = new EventEmitter();
 
   descriptionShow!: boolean;
+
   subscription!: Subscription;
 
   faTimes = faTimes;

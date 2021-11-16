@@ -1,4 +1,9 @@
-<form *ngIf="showAddTask" class="add-form" (ngSubmit)="onSubmit()">
+<form
+  class="form-add-task"
+  (ngSubmit)="onSubmit()"
+  [@open-close-add-task]="showAddTask ? 'open' : 'closed'"
+>
+  <!-- Task name -->
   <div class="form-control">
     <label for="text">Task</label>
     <input
@@ -10,39 +15,41 @@
     />
   </div>
 
-  <div class="form-control">
-    <label for="text">Day & Time</label>
-    <input
-      type="text"
-      name="day"
-      [(ngModel)]="day"
-      id="day"
-      placeholder="Add day & time"
-    />
-  </div>
-
+  <!-- Description -->
   <div class="form-control">
     <label for="text">Description</label>
     <input
+      id="description"
       type="text"
       name="description"
       [(ngModel)]="description"
-      id="description"
       placeholder="Add description"
     />
   </div>
 
+  <!-- Deadline -->
+  <div class="form-control">
+    <label for="text">Day & Time</label>
+    <input
+      id="day"
+      type="text"
+      name="day"
+      [(ngModel)]="day"
+      placeholder="Add day & time"
+    />
+  </div>
+
+  <!-- Reminder -->
   <div class="form-control form-control-check">
     <label for="reminder">Set Reminder</label>
     <input
+      id="reminder"
       type="checkbox"
       name="reminder"
-      id="reminder"
       [(ngModel)]="reminder"
     />
   </div>
 
-  {{ text }}
-
-  <input type="submit" value="Save Task" class="button-block" />
+  <!-- Save task -->
+  <input type="submit" value="Save Task" class="button button-block" />
 </form>
