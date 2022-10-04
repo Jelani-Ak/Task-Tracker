@@ -1,5 +1,3 @@
-import { Task } from "./Task"
+import {Task} from "./Task"
 
-export const TASKS: Task[] = [
-    
-]
+export const TASKS: Task[] = []
